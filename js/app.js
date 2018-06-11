@@ -47,7 +47,7 @@ class Player {
 
 
   update(dt) {
-    this.x += this.speed * dt;
+    this.x
   }
 
   render(){
