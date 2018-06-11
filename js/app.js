@@ -16,8 +16,17 @@ class Enemy {
        // You should multiply any movement by the dt parameter***
        // which will ensure the game runs at the same speed for***
        // all computers.***
+  // update(dt) {
+  //   this.x += this.speed * dt;
+  // }
+
   update(dt) {
-    this.x += this.speed * dt;
+    if (this.x < 505) {
+      this.x += this.speed * dt;
+    } else {
+      this.x = -25;
+    }
+
   }
   // Draw the enemy on the screen, required method for game***
   render(){
@@ -30,12 +39,25 @@ class Enemy {
 // This class requires an update(), render() and***
 // a handleInput() method.***
 class Player {
-  constructor(x, y, speed) {
+  constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.speed = speed;
     this.sprite = 'images/char-boy.png';
   }
+
+
+  update(dt) {
+    this.x += this.speed * dt;
+  }
+
+  render(){
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  }
+
+  handleInput() {
+
+  }
+
 }
 
 
@@ -43,10 +65,20 @@ class Player {
 // Place all enemy objects in an array called allEnemies***
 // Place the player object in a variable called player ***
 let allEnemies = [];
-let player = new Player(200,380,0);
-// need to add function to create more than one enemy
-let enemy = new Enemy(0, 60, 100);
-allEnemies.push(enemy);
+let verticalAxis = [60, 145, 230];
+let player = new Player(200,400);
+
+for (let i = 0; i < 3; i++) {
+  let horizontalAxis = Math.floor(Math.random() * 500) + 1;
+  let speed = Math.floor(Math.random() * 500) + 50;
+  let enemyName = 'enemy' + i;
+  enemyName = new Enemy(horizontalAxis, verticalAxis[i], speed);
+
+  allEnemies.push(enemyName);
+}
+
+// let enemy = new Enemy(0, 230, 500); ///Use 145 for middle space, 60 for top 230 bottom
+// allEnemies.push(enemy);
 
 // This listens for key presses and sends the keys to your ***
 // Player.handleInput() method. You don't need to modify this.***
