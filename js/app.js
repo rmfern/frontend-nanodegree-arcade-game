@@ -28,7 +28,7 @@ class Enemy {
         player.y < this.y + 25 &&
         30 + player.y > this.y) {
           player.x = 200;
-          player.y = 400;
+          player.y = 375;
         }
 
   }
@@ -51,18 +51,19 @@ class Player {
 
 
   update(dt) {
-    if (this.x > 415) {
-      this.x = 415;
+    // Ensures character stays within game boundaries
+    if (this.x > 400) {
+      this.x = 400;
     }
-    if (this.y > 430) {
-      this.y = 430;
+    if (this.y > 400) {
+      this.y = 400;
     }
     if (this.x < -10) {
       this.x = -10;
     }
     if (this.y < -10) {
       this.x = 200;
-      this.y = 400;
+      this.y = 375;
     }
 
   }
@@ -72,18 +73,19 @@ class Player {
   }
 
   handleInput(key) {
+    //controls player movements
     switch (key) {
       case 'left':
-        this.x -= 30;
+        this.x -= 40;
         break;
       case 'up':
-        this.y -= 30;
+        this.y -= 82.5
         break;
       case 'right':
-        this.x += 30;
+        this.x += 40;
         break;
       case 'down':
-        this.y += 30;
+        this.y += 82.5;
         break;
     }
 
@@ -98,8 +100,9 @@ class Player {
 // Place the player object in a variable called player ***
 let allEnemies = [];
 let verticalAxis = [60, 145, 230];
-let player = new Player(200,400);
+let player = new Player(200,375);
 
+//creates enemy players and adds them to the board
 for (let i = 0; i < 3; i++) {
   let horizontalAxis = Math.floor(Math.random() * 500) + 1;
   let speed = Math.floor(Math.random() * 500) + 50;
