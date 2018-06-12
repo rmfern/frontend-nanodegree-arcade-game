@@ -1,6 +1,13 @@
-frontend-nanodegree-arcade-game
+#frontend-nanodegree-arcade-game
 ===============================
+## Running the game
+===============================
+Click 'Clone or download' then click 'Download ZIP.' Once the file is downloaded, extract the contents and open 'index.html' in a browser of your choice.
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Rules of the game
+===============================
+The idea of the game is based off of the classic 'Frogger' design - make it to the top of the game board without running into any of the bugs as they make their way across the screen.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## Game controls
+===============================
+The Up, Down, Left, and Right keyboard keys are all you'll need for this one. It's simple!
