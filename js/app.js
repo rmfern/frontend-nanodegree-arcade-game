@@ -1,14 +1,16 @@
+
+'use strict';
 // Enemies our player must avoid
 class Enemy {
   constructor(x,y,speed) {
     // Variables applied to each of our instances go here,***
     // we've provided one for you to get started***
-  this.x = x;
-  this.y = y;
-  this.speed = speed;
-    // The image/sprite for our enemies, this uses***
-    // a helper we've provided to easily load images***
-  this.sprite = 'images/enemy-bug.png';
+    this.x = x;
+    this.y = y;
+    this.speed = speed;
+      // The image/sprite for our enemies, this uses***
+      // a helper we've provided to easily load images***
+    this.sprite = 'images/enemy-bug.png';
   }
   // // Update the enemy's position, required method for game***
   // // Parameter: dt, a time delta between ticks***
@@ -104,8 +106,8 @@ let player = new Player(200,375);
 
 //creates enemy players and adds them to the board
 for (let i = 0; i < 3; i++) {
-  let horizontalAxis = Math.floor(Math.random() * 500) + 1;
-  let speed = Math.floor(Math.random() * 500) + 50;
+  const horizontalAxis = Math.floor(Math.random() * 500) + 1;
+  const speed = Math.floor(Math.random() * 500) + 50;
   let enemyName = 'enemy' + i;
   enemyName = new Enemy(horizontalAxis, verticalAxis[i], speed);
 
